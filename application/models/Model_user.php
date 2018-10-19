@@ -13,7 +13,24 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 		}
 
 		function tampil_user(){
-			return $this->db->get('user');
+			$this->db->select('*');
+			$this->db-> from('user');
+			$this->db-> where('level =', 'adminkepalaprovinsi');
+			return $this->db->get();
+		}
+
+		function tampil_userkab(){
+			$this->db-> select('*');
+			$this->db-> from('user');
+			$this->db-> where('level', 'adminkepalakabupaten');
+			return $this->db->get();
+		}
+
+		function tampil_userkec(){
+			$this->db-> select('*');
+            $this->db-> from('user');
+			$this->db-> where('level', 'adminkepalakecamatan');
+			return $this->db->get();
 		}
 
 		function edit_user($where,$table){

@@ -17,7 +17,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Pengguna Provinsi
+        Data Pengguna Kabupaten/Kota
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -31,7 +31,7 @@
   <!-- Page Heading -->
         <div class="row">
             <div class="col=md-3">
-                <div class="pull-left"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Admin Provinsi </a></div>
+                <div class="pull-left"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Admin Kabupaten/Kota </a></div>
                 <br><br>
             </div>
         </div>
@@ -44,6 +44,7 @@
             <thead>
               <tr>
                 <th>Id Pengguna</th>
+                 <th>Id Kabupaten</th>
                 <th>Username</th>
                 <th>Password</th>
                 <th>level</th>
@@ -57,6 +58,7 @@
                 <tr>
 
                     <td><?php echo $row->id_user ?></td>
+                    <td><?php echo $row->id_kabkot ?></td>
                     <td><?php echo $row->username ?></td>
                     <td><?php echo $row->password ?></td>
                     <td><?php echo $row->level ?></td>
@@ -89,7 +91,24 @@
                         <div class="col-xs-9">
                             <input name="id_user" class="form-control" type="text" placeholder="Id pengguna" style="width:335px;" required>
                         </div>
-                    </div>                  -->
+                    </div> -->
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3" >ID Kabupaten/Kota</label>
+                        <div class="col-xs-9">
+                            <select name="id_kabkot" id="id_kabkot" class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" required>
+                                <option value="">Pilih Kab/Kota</option>
+                                <?php
+                                    foreach ($kabkot as $rows) {
+                                ?>
+                                    <option value="<?php echo $rows->id_kabkot ?>"><?php echo $rows->nama_kabkot ?></option>
+                                <?php
+                                    }
+                                ?>
+                                </select>
+                        </div>
+                    </div>
+                    
                      <div class="form-group">
                         <label class="control-label col-xs-3" >Username</label>
                         <div class="col-xs-9">
@@ -109,8 +128,8 @@
                         <div class="col-xs-9">
                             <select name="level" class="form-control" type="text" placeholder="username" style="width:335px;" required>
                                 <option value="">Pilih Hak Akses</option>
-                                <option value="adminprovinsi">Admin Provinsi</option>
-                                <option value="adminkepalaprovinsi">Admin Kepala Provinsi</option>
+                                <option value="adminkabupaten">Admin Kabupaten/Kota</option>
+                                <option value="adminkepalakabupaten">Admin Kepala Kabupaten/Kota</option>
                             </select>
                         </div>
                     </div>

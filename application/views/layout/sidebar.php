@@ -9,11 +9,18 @@
             <i class="fa fa-dashboard"></i><span>Dashboard</span>
           </a>
         </li>
-         <li>
-          <a href="<?php echo base_url('admin\C_admin\tampil_user');?>">
-            <i class="fa fa-user"></i>
-            <span>User</span>
+        <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>Pengguna</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li class=""><a href="<?php echo base_url('admin\C_admin\tampil_user');?>"><i class="fa fa-user"></i> Pengguna Provinsi</a></li>
+            <li class=""><a href="<?php echo base_url('admin\C_admin\tampil_userkab');?>"><i class="fa fa-user"></i> Pengguna Kabupaten/Kota</a></li>
+            <li class=""><a href="<?php echo base_url('admin\C_admin\tampil_userkec');?>"><i class="fa fa-user"></i> Pengguna Kecamatan</a></li>
+          </ul>
         </li>
          <li>
           <a href="<?php echo site_url('admin/C_admin/tampil_kabkot');?>">
@@ -33,12 +40,64 @@
             <span>Kelurahan</span>
           </a>
         </li>
-         
-        <li>
+      <li class="treeview">
+          
+          <ul class="treeview-menu">      
+          </ul>
+        </li>
+        <li class="treeview">
           <a href="<?php echo site_url('admin/C_admin/tampil_laporan');?>">
             <i class="fa fa-book"></i> <span>Laporan Reguler</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
-      </li>
+          <ul class="treeview-menu">
+          <li><a href="#"></a></li>
+            <li class="treeview">
+              <a href="<?php echo site_url('/C_laporan/tampil_kabkot');?>"><i class="fa fa-circle-o"></i> Laporan Provinsi
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> AKTA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+            <a href="<?php echo site_url('/C_laporan/tampil_kecamatan');?>"><i class="fa fa-circle-o"></i> Laporan Kab/Kota
+              <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> AKTA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+            <a href="<?php echo site_url('/C_laporan/tampil_kelurahan');?>"><i class="fa fa-circle-o"></i> Laporan Kecamatan
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> AKTA</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

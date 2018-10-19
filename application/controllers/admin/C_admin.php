@@ -10,7 +10,7 @@ class C_admin extends CI_Controller {
 		$this->load->model('M_laporan');
 		$this->load->model('Auth_model');
 	}
- 
+
 	public function index() {
 		$data['username'] = $this->session->userdata('username');
 		$this->load->view('admin/index', $data);
@@ -21,6 +21,23 @@ class C_admin extends CI_Controller {
 	function tampil_user(){
 		$data['data']=$this->Model_user->tampil_user()->result();
 		$this->load->view('admin/v_user', $data);
+	}
+
+	function tampil_userkab(){
+		$result  = array (
+			'data' => $this->Model_user->tampil_userkab()->result(),
+			'kabkot' => $this->M_kabkot->tampil_kabkot()->result()
+		);
+		$this->load->view('admin/v_userkabkot', $result);
+	}
+
+	function tampil_userkec(){
+		$result  = array (
+			'data' => $this->Model_user->tampil_userkec()->result(),
+			'kabkot' => $this->M_kabkot->tampil_kabkot()->result(),
+			'kecamatan' => $this->M_kecamatan->tampil_kecamatan()->result()
+		);
+		$this->load->view('admin/v_userkec', $result);
 	}
 
 	function edit_user($id){
@@ -36,7 +53,7 @@ class C_admin extends CI_Controller {
 	}
 
 	function simpan_user(){
-		$id_user=$this->input->post('id_user');
+	//	$id_user=$this->input->post('id_user');
 		$id_kabkot=$this->input->post('id_kabkot');
 		$id_kec=$this->input->post('id_kec');
 		$username=$this->input->post('username');
@@ -44,7 +61,7 @@ class C_admin extends CI_Controller {
 		$level=$this->input->post('level');
 
 		$data=array(
-			'id_user'=> $id_user,
+	//		'id_user'=> $id_user,
 			'id_kabkot' => $id_kabkot,
 			'id_kec' => $id_kec,
 			'username'=> $username,
@@ -83,7 +100,7 @@ class C_admin extends CI_Controller {
 		 redirect('index.php/admin/C_admin/tampil_user');
 		//print_r($id_kabkot);
 	}
-
+	
 	//KABUPATEN KOTA	
 
 	function tampil_kabkot(){

@@ -6,8 +6,11 @@ class M_laporan extends CI_Model{
 		$this->db->insert($table,$data);
 	}
 
-	function tampil_laporan(){
-		return $this->db->get('ektp');
+	function laporan_kabkot($id){
+		$this->db->select('*');
+		$this->db-> from('ektp');
+		$this->db-> where('id_kabkot', $id);
+		return $this->db->get();
 	}
 
 	function edit_laporan($where,$table){

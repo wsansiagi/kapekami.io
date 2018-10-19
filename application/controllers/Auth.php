@@ -23,10 +23,11 @@ class Auth extends CI_Controller {
                 $sess_data['level'] = $sess->level;
                 $this->session->set_userdata($sess_data);
             }
-            if ($this->session->userdata('level')=='admin') {
+            if ($this->session->userdata('level')=='adminprovinsi') {
                 $this->load->view('admin/index',$sess_data);
+               
             }
-            elseif ($this->session->userdata('level')=='adminkec') {
+            elseif ($this->session->userdata('level')=='adminkecamatan') {
                 $this->load->view('adminkec/index',$sess_data);
             }       
         }
