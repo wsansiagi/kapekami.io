@@ -15,6 +15,10 @@ class C_laporan extends CI_Controller {
 		$data['data']=$this->M_kabkot->tampil_kabkot()->result();
 		$this->load->view('laporan/detailprovinsi', $data);
 	}
+	public function tampil_jumlahpendudukkabkot($id) {
+		$data['data']=$this->M_laporan->laporan_jumlahpenduduk_kabkot($id)->result();
+		$this->load->view('laporan/detailjumlahpenduduk', $data);
+	}
 
 	public function detail_kabkot($id) {
 		$data['data']=$this->M_laporan->laporan_kabkot($id)->result();
