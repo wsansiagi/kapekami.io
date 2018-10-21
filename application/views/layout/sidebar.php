@@ -89,8 +89,8 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
+              <li><a href="<?php echo site_url('C_laporan/tampil_laporan_kelurahan');?>"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
+                <li><a href="<?php echo site_url('C_laporan/tampil_laporan_kelurahan_ktp');?>"><i class="fa fa-circle-o"></i> KTP</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> AKTA</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
