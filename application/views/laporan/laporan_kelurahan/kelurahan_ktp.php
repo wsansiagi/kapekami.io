@@ -117,6 +117,12 @@ body {font-family: Arial;}
                             foreach ($data as $row =>$value ) {
                             $sum = $value->dkbl + $value->dkbp;
                             $sum2 = $value->dpl + $value->dpp;
+                            //$total1=$total1+$value->dkbl;
+                           // $total2=$total2+$value->dkbp;
+                           // $total3=$total3+$sum;
+                           // $total4=$total4+$value->dpl;
+                           // $total5=$total5+$value->dpl;
+                           // $total6=$total6+$sum1;
                         ?>
                         <tr>
                             <td><?php echo $value->nama_kelurahan ?></td>
@@ -126,14 +132,23 @@ body {font-family: Arial;}
                             <td><?php echo $value->dpl ?></td>
                             <td><?php echo $value->dpp ?></td>
                             <td><?php echo $sum2 ?></td>
-                            <td><?php echo $value->bulan ?></td>
-                            <td><?php echo $value->tahun ?></td>
 
                         </tr>
                         <?php
                             }
                         ?>
                     </tbody>
+                    <tfoot>
+                    <tr>
+                    <td colspan="2">Total</td>
+                    <td></td>
+                    <td></td>
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
                 </table>
                 </div>
 

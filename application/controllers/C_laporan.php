@@ -51,7 +51,6 @@ class C_laporan extends CI_Controller {
 
 
 
-
 	public function detail_kabkot($id) {
 		$data['data']=$this->M_laporan->laporan_kabkot($id)->result();
 		$this->load->view('laporan/laporankabkot', $data);
