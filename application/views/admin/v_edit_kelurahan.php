@@ -41,20 +41,21 @@
           ?>
           <form class="form-horizontal" method="POST" action="<?php echo site_url().'admin/C_admin/update_kelurahan'; ?>">
                 <div class="modal-body">
-
+                    
+                <div class="form-group">
+                        <label class="control-label col-xs-3" >ID Kecamatan</label>
+                        <div class="col-xs-9">
+                            <input name="id_kec" value="<?php echo $row->id_kec?>" class="form-control" type="text" placeholder="Id Kecamatan" style="width:335px;" readonly>
+                        </div>
+                    </div>
                   <div class="form-group">
                         <label class="control-label col-xs-3" >ID Kelurahan</label>
                         <div class="col-xs-9">
-                            <input name="id_kel" value="<?php echo $row->id_kel?>"  class="form-control" type="text" placeholder="Id Kelurahan" style="width:335px;" readonly>
+                            <input name="id_kel" value="<?php echo $row->id_kel?>"  class="form-control" type="text" placeholder="Id Kelurahan" style="width:335px;" required>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="control-label col-xs-3" >ID Kecamatan</label>
-                        <div class="col-xs-9">
-                            <input name="id_kec" value="<?php echo $row->id_kec?>" class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" required>
-                        </div>
-                    </div>
+                    
 
 
                     <div class="form-group">

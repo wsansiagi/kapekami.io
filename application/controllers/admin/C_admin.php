@@ -377,7 +377,7 @@ class C_admin extends CI_Controller {
 			'akb'=>$akb,
 			'aksb'=>$aksb,
 			'akbt'=>$akbt,
-			'aksbt'=>$aksbt
+			'aksbt'=>$aksbt,
 			'bulan'=>$bulan,
 			'tahun'=>$tahun,
 			'status'=> $status
@@ -476,7 +476,7 @@ class C_admin extends CI_Controller {
 			'akb'=>$akb,
 			'aksb'=>$aksb,
 			'akbt'=>$akbt,
-			'aksbt'=>$aksbt
+			'aksbt'=>$aksbt,
 			'bulan'=>$bulan,
 			'tahun'=>$tahun,
 			'status'=> $status

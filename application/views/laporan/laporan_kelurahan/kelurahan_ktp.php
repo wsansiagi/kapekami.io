@@ -95,13 +95,11 @@ body {font-family: Arial;}
                     <thead>
                     <tr rowspan="2">
                         <td rowspan="3">Nama Kelurahan</td>
-                        <td colspan="9"><center>Jumlah Penduduk<center></td>
+                        <td colspan="6"><center>Jumlah Penduduk<center></td>
                     </tr>
                     <tr>
                         <td colspan="3"><center>DKB</center></td>
                         <td colspan="3"><center>Data Pelayanan</center></td>
-                        <td rowspan="2"><center>Bulan</center></td>
-                        <td rowspan="2"><center>Tahun</center></td>
                     </tr>
                     <tr>
                         <td colspan="">L</td>
@@ -117,12 +115,6 @@ body {font-family: Arial;}
                             foreach ($data as $row =>$value ) {
                             $sum = $value->dkbl + $value->dkbp;
                             $sum2 = $value->dpl + $value->dpp;
-                            //$total1=$total1+$value->dkbl;
-                           // $total2=$total2+$value->dkbp;
-                           // $total3=$total3+$sum;
-                           // $total4=$total4+$value->dpl;
-                           // $total5=$total5+$value->dpl;
-                           // $total6=$total6+$sum1;
                         ?>
                         <tr>
                             <td><?php echo $value->nama_kelurahan ?></td>
@@ -132,7 +124,6 @@ body {font-family: Arial;}
                             <td><?php echo $value->dpl ?></td>
                             <td><?php echo $value->dpp ?></td>
                             <td><?php echo $sum2 ?></td>
-
                         </tr>
                         <?php
                             }
@@ -140,12 +131,10 @@ body {font-family: Arial;}
                     </tbody>
                     <tfoot>
                     <tr>
-                    <td colspan="2">Total</td>
+                    <td>Total</td>
                     <td></td>
                     <td></td>
                     <td><td>
-                    <td></td>
-                    <td></td>
                     <td></td>
                     </tr>
                     </tfoot>

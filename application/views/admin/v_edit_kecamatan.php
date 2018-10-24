@@ -43,14 +43,14 @@
                 <div class="modal-body">
 
                   <div class="form-group">
-                        <label class="control-label col-xs-3" >ID Kabupaten/Kota</label>
+                        <label class="control-label col-xs-3" >ID Kecamatan</label>
                         <div class="col-xs-9">
                             <input name="id_kec" value="<?php echo $row->id_kec?>"  class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" readonly>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-xs-3" >ID Kecamatan</label>
+                        <label class="control-label col-xs-3" >ID Kabupaten/Kota</label>
                         <div class="col-xs-9">
                             <input name="id_kabkot" value="<?php echo $row->id_kabkot?>" class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" required>
                         </div>

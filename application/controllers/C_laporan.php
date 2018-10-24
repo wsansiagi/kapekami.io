@@ -29,6 +29,10 @@ class C_laporan extends CI_Controller {
 		$this->load->view('laporan/detailkelurahan', $data);
 		//print_r($data['data']);
 	}
+	public function tampil_jumlahakta(){
+		$data['data']=$this->M_laporan->list_data_akta();
+		$this->load->view('laporan/detailakta', $data);
+	}
 	public function jumlahpenduduk_kelurahan($id) {
 		$data['data']=$this->M_laporan->list_penduduk_kelurahan($id);
 		$this->load->view('laporan/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
@@ -64,6 +68,22 @@ class C_laporan extends CI_Controller {
 	public function tampil_kelurahan($id) {
 		$data['data']=$this->M_laporan->tampil_provinsi($id)->result();
 		$this->load->view('admin/v_userkec', $data);
+	}
+
+	public function akta_kelurahan($id){
+		$data = array(
+			'aktakawin' => $this->M_laporan->list_akta_kelurahan($id),
+			'pelaporankematian' => $this->M_laporan->list_akta_kelurahan2($id),
+			'aktapenduduk018tahun' => $this->M_laporan->list_akta_kelurahan3($id),
+			'aktalahir' => $this->M_laporan->list_akta_kelurahan4($id),
+			'kepemilikanakta018tahun' => $this->M_laporan->list_akta_kelurahan5($id),
+			'aktapenduduk05tahun' => $this->M_laporan->list_akta_kelurahan6($id),
+			'kepemilikanakta05tahun' => $this->M_laporan->list_akta_kelurahan7($id),
+			'terbitaktaLahir' => $this->M_laporan->list_akta_kelurahan6($id),
+			'aktacerai' => $this->M_laporan->list_akta_kelurahan7($id)
+		);
+		$this->load->view('laporan/laporan_kelurahan/kelurahan_akta', $data);
+		//print_r($data);
 	}
 }
 
