@@ -40,8 +40,53 @@ class M_laporan extends CI_Model{
 		$query2 = $this->db->where($array)->get();
 		return $query2->result();
 	 }
-	
+	 function ktp_penduduk_kelurahan2($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$status= 'WajibKTPBelumRekam';
+		$array = array('ektp.id_kec' => $id, 'ektp.status' => $status);
+		$query2 = $this->db->where($array)->get();
+		return $query2->result();
+	 }
+	 function ktp_penduduk_kelurahan3($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$status= 'PerekamanPencetakan';
+		$array = array('ektp.id_kec' => $id, 'ektp.status' => $status);
+		$query2 = $this->db->where($array)->get();
+		return $query2->result();
+	 }
+	 function ktp_penduduk_kelurahan4($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$status= 'KTPStatusRekam';
+		$array = array('ektp.id_kec' => $id, 'ektp.status' => $status);
+		$query2 = $this->db->where($array)->get();
+		return $query2->result();
+	 }
+	 function ktp_penduduk_kelurahan5($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$status= 'PencetakanKTPLD';
+		$array = array('ektp.id_kec' => $id, 'ektp.status' => $status);
+		$query2 = $this->db->where($array)->get();
+		return $query2->result();
+	 }
 
+	 function ktp_penduduk_kelurahan6($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$status= 'SuratKeteranganPKTP';
+		$array = array('ektp.id_kec' => $id, 'ektp.status' => $status);
+		$query2 = $this->db->where($array)->get();
+		return $query2->result();
+	 }
+	 
 	function edit_laporan($where,$table){
 		return $this->db->get_where($table,$where);
 	}
@@ -137,6 +182,22 @@ class M_laporan extends CI_Model{
 		$this->db->from('ektp');
 		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
 		$where = array('ektp.id_kec' => $id, 'ektp.status' => 'AktaCerai');
+		$query3 = $this->db->where($where)->get();
+		return $query3->result();
+	}
+
+	function list_data_pindahdatang(){
+		$this->db->select('*');
+		$this->db->from('kecamatan');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function list_pidahdatang_kelurahan($id){
+		$this->db->select('*');
+		$this->db->from('ektp');
+		$this->db->join('kelurahan','kelurahan.id_kel=ektp.id_kel');
+		$where = array('ektp.id_kec' => $id, 'ektp.status' => 'PindahDatang');
 		$query3 = $this->db->where($where)->get();
 		return $query3->result();
 	}

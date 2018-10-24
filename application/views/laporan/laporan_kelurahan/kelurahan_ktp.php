@@ -89,7 +89,7 @@ body {font-family: Arial;}
                                </div>
 
                 <div id="WajibKTP" class="tabcontent">
-                <h3>London</h3>
+                <h3>Wajib KTP</h3>
                 <p>
                 <table id="example2" border="1px" >
                     <thead>
@@ -112,7 +112,7 @@ body {font-family: Arial;}
                     </thead>
                     <tbody>
                     <?php
-                            foreach ($data as $row =>$value ) {
+                            foreach ($wajibktp as $row =>$value ) {
                             $sum = $value->dkbl + $value->dkbp;
                             $sum2 = $value->dpl + $value->dpp;
                         ?>
@@ -136,34 +136,297 @@ body {font-family: Arial;}
                     <td></td>
                     <td><td>
                     <td></td>
+                    <td></td>
                     </tr>
                     </tfoot>
                 </table>
                 </div>
 
                 <div id="WajibKTPBelumRekam" class="tabcontent">
-                <h3>Paris</h3>
-                <p>Paris is the capital of France.</p> 
+                <h3>Wajib KTP Belum Rekam</h3>
+                <p>
+                <table id="example3" border="1px" >
+                    <thead>
+                    <tr rowspan="2">
+                        <td rowspan="3">Nama Kelurahan</td>
+                        <td colspan="9"><center>Jumlah Penduduk<center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><center>DKB</center></td>
+                        <td colspan="4"><center>Data Pelayanan</center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">%</td>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">%</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($wajibktpbelumrekam as $row =>$value ) {
+                            $sum = $value->dkbl + $value->dkbp;
+                            $sum2 = $value->dpl + $value->dpp;
+                        ?>
+                        <tr>
+                            <td><?php echo $value->nama_kelurahan ?></td>
+                            <td><?php echo $value->dkbl ?></td>
+                            <td><?php echo $value->dkbp ?></td>
+                            <td><?php echo $sum ?></td>
+                            <td></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                            <td></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
                 </div>
 
                 <div id="PerekamanPencetakan" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <h3>KTP Perekaman Percetakan</h3>
+                <p>
+                <table id="example5" border="1px" >
+                    <thead>
+                    <tr rowspan="2">
+                        <td rowspan="3">Nama Kelurahan</td>
+                        <td colspan="6"><center>Perekaman<center></td>
+                        <td colspan="6"><center>Percetakan<center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><center>BULAN OKTOBER</center></td>
+                        <td colspan="3"><center>S/D OKTOBER</center></td>
+                        <td colspan="3"><center>BULAN SEPTEMBER</center></td>
+                        <td colspan="3"><center>S/D SEPTEMBER</center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($perekamanpencetakan as $row =>$value ) {
+                            $sum = $value->dkbl + $value->dkbp;
+                            $sum2 = $value->dpl + $value->dpp;
+                        ?>
+                        <tr>
+                            <td><?php echo $value->nama_kelurahan ?></td>
+                            <td><?php echo $value->dkbl ?></td>
+                            <td><?php echo $value->dkbp ?></td>
+                            <td><?php echo $sum ?></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
                 </div>
 
                 <div id="KTPStatusRekam" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <h3>KTP Status Rekam</h3>
+                <p>
+                <table id="example6" border="1px" >
+                    <thead>
+                    <tr rowspan="2">
+                        <td colspan="3">Nama Kelurahan</td>
+                        <td colspan="">BIO</td>
+                        <td colspan="">EFC</td>
+                        <td colspan="">DUF</td>
+                        <td colspan="">ADJ</td>
+                        <td colspan="">PRR</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($ktpstatusrekam as $row =>$value ) {
+                            $sum = $value->dkbl + $value->dkbp;
+                            $sum2 = $value->dpl + $value->dpp;
+                        ?>
+                        <tr>
+                            <td><?php echo $value->nama_kelurahan ?></td>
+                            <td><?php echo $value->dkbl ?></td>
+                            <td><?php echo $value->dkbp ?></td>
+                            <td><?php echo $sum ?></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
                 </div>
 
                 <div id="PencetakanKTPLD" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <h3>Pencetakan KTLPD</h3>
+                <p>
+                <table id="example7" border="1px" >
+                    <thead>
+                    <tr rowspan="2">
+                        <td rowspan="3">Nama Kelurahan</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><center>BULAN SEPTEMBER</center></td>
+                        <td colspan="3"><center>S/D BULAN SEPTEMBER</center></td>
+                    </tr>
+                    <tr>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                        <td colspan="">L</td>
+                        <td colspan="">P</td>
+                        <td colspan="">Jumlah</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($pencetakanktpld as $row =>$value ) {
+                            $sum = $value->dkbl + $value->dkbp;
+                            $sum2 = $value->dpl + $value->dpp;
+                        ?>
+                        <tr>
+                            <td><?php echo $value->nama_kelurahan ?></td>
+                            <td><?php echo $value->dkbl ?></td>
+                            <td><?php echo $value->dkbp ?></td>
+                            <td><?php echo $sum ?></td>
+                            <td><?php echo $value->dpl ?></td>
+                            <td><?php echo $value->dpp ?></td>
+                            <td><?php echo $sum2 ?></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>Total</td>
+                    <td></td>
+                    <td></td>
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
                 </div>
                 
                 <div id="SuratKeteranganPKTP" class="tabcontent">
-                <h3>Tokyo</h3>
-                <p>Tokyo is the capital of Japan.</p>
+                <h3>Surat Keterangan PKTP</h3>
+                <p>
+                <table id="example8" border="1px" >
+                    <thead>
+                    <tr rowspan="2">
+                        <td rowspan="3">Nama Kelurahan</td>
+                        <td colspan="6"><center>Penerbitan Surat Keterangan<center></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"><center>Tercetak KTP</center></td>
+                        <td colspan="2"><center>Belum Tercetak KTP</center></td>
+                        <td rowspan="2"><center>Jumlah</center></td>
+                       
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="">Status Tunggal</td>
+                        <td colspan="">Belum Tunggal</td>
+                       
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                            foreach ($suratketeranganpktp as $row =>$value ) {
+                            $sum = $value->dkbl + $value->dkbp;
+                            $sum2 = $value->dpl + $value->dpp;
+                        ?>
+                        <tr>
+                            <td><?php echo $value->nama_kelurahan ?></td>
+                            <td><?php echo $value->dkbl ?></td>
+                            <td><?php echo $value->dkbp ?></td>
+                            <td><?php echo $sum ?></td>
+                            <td><?php echo $sum2 ?></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td>Total</td>
+                    
+                    <td><td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    </tfoot>
+                </table>
                 </div>
           </div>
         </div>

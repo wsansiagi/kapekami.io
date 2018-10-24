@@ -45,9 +45,16 @@ class C_laporan extends CI_Controller {
 	}
 
 	public function ktp_penduduk_kelurahan($id){
-		$data['data']=$this->M_laporan->ktp_penduduk_kelurahan($id);
+		$data = array(
+			'wajibktp'=> $this->M_laporan->ktp_penduduk_kelurahan($id),
+			'wajibktpbelumrekam'=> $this->M_laporan->ktp_penduduk_kelurahan2($id),
+			'perekamanpencetakan'=> $this->M_laporan->ktp_penduduk_kelurahan3($id),
+			'ktpstatusrekam'=> $this->M_laporan->ktp_penduduk_kelurahan4($id),
+			'pencetakanktpld'=> $this->M_laporan->ktp_penduduk_kelurahan5($id),
+			'suratketeranganpktp'=> $this->M_laporan->ktp_penduduk_kelurahan5($id)
+		);
 		$this->load->view('laporan/laporan_kelurahan/kelurahan_ktp', $data);
-		//print_r($data['data']);
+	
 	}
 
 
@@ -84,6 +91,15 @@ class C_laporan extends CI_Controller {
 		);
 		$this->load->view('laporan/laporan_kelurahan/kelurahan_akta', $data);
 		//print_r($data);
+	}
+
+	public function tampil_pindahdatang(){
+		$data['data']=$this->M_laporan->list_data_pindahdatang();
+		$this->load->view('laporan/detailpindah', $data);
+	}
+	public function pindahdatang_kelurahan($id){
+		$data['data']=$this->M_laporan->list_pidahdatang_kelurahan($id);
+		$this->load->view('laporan/laporan_kelurahan/kelurahan_pindahdatang', $data);
 	}
 }
 

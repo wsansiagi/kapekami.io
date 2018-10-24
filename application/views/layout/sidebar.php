@@ -41,7 +41,6 @@
           </a>
         </li>
       <li class="treeview">
-          
           <ul class="treeview-menu">      
           </ul>
         </li>
@@ -93,7 +92,7 @@
                 <li><a href="<?php echo site_url('C_laporan/tampil_laporan_kelurahan_ktp');?>"><i class="fa fa-circle-o"></i> KTP</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
                 <li><a href="<?php echo site_url('C_laporan/tampil_jumlahakta');?>"><i class="fa fa-circle-o"></i> AKTA</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+                <li><a href="<?php echo site_url('C_laporan/tampil_pindahdatang');?>"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
               </ul>
             </li>
           </ul>

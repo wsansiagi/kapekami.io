@@ -35,24 +35,56 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example2" border="1px" >
             <thead>
+              <tr rowspan="2">
+                <td rowspan="3">Nama Kelurahan</td>
+                <td colspan="12"><center>Jumlah Penduduk<center></td>
+              </tr>
               <tr>
-                <th>Id Kecamatan</th>
-                <th>Nama Kecamatan</th>
-                <th>Aksi</th>
+                <td colspan="3"><center>BULAN OKTOBER</center></td>
+                <td colspan="3"><center>S/D OKTOBER</center></td>
+                <td colspan="3"><center>BULAN SEPTEMBER</center></td>
+                <td colspan="3"><center>S/D SEPTEMBER</center></td>
+              </tr>
+              <tr>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
               </tr>
             </thead>
             <tbody>
               <?php
-                    foreach ($data as $row){
+                    foreach ($data as $row =>$value ) {
+                      $sum = $value->kbsl + $value->kbsp;
+                      $sum2 = $value->ksbsl + $value->ksbsp;
+                      $sum3 = $value->kkbsl + $value->kkbsp;
+                      $sum4 = $value->kksbsl + $value->kksbsp;
                 ?>
                 <tr>
-                    <td><?php echo $row->id_kec ?></td>
-                    <td><?php echo $row->nama_kecamatan ?></td>
-                    <td>
-                    <a href="<?php echo base_url('C_laporan/ktp_penduduk_kelurahan/'.$row->id_kec); ?>" class="btn btn-primary btn-sm">Lihat KTP</a>
-                    </td>
+                    <td><?php echo $value->nama_kelurahan ?></td>
+                    <td><?php echo $value->kbsl ?></td>
+                    <td><?php echo $value->kbsp ?></td>
+                    <td><?php echo $sum ?></td>
+                    <td><?php echo $value->ksbsl ?></td>
+                    <td><?php echo $value->ksbsp ?></td>
+                    <td><?php echo $sum2 ?></td>
+                    <td><?php echo $value->kkbsl ?></td>
+                    <td><?php echo $value->kkbsp ?></td>
+                    <td><?php echo $sum3 ?></td>
+                    <td><?php echo $value->kksbsl ?></td>
+                    <td><?php echo $value->kksbsp ?></td>
+                    <td><?php echo $sum4 ?></td>
+
                 </tr>
                 <?php
                     }

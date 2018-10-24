@@ -51,7 +51,7 @@
                     <td><?php echo $row->id_kec ?></td>
                     <td><?php echo $row->nama_kecamatan ?></td>
                     <td>
-                    <a href="<?php echo base_url('C_laporan/jumlahpenduduk_kelurahan/'.$row->id_kec); ?>" class="btn btn-primary btn-sm">Lihat Jumlah Penduduk</a>
+                    <a href="<?php echo base_url('C_laporan/pindahdatang_kelurahan/'.$row->id_kec); ?>" class="btn btn-primary btn-sm">Lihat Pindah Datang</a>
                     </td>
                 </tr>
                 <?php
