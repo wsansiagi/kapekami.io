@@ -22,11 +22,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-              <li><a href="<?php echo site_url('C_laporan/tampil_laporan_kelurahan');?>"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
-                <li><a href="<?php echo site_url('C_laporan/tampil_laporan_kelurahan_ktp');?>"><i class="fa fa-circle-o"></i> KTP</a></li>
+              <li><a href="<?php echo site_url('admin_kec/C_laporan/detail_jumlahpenduduk/'.$this->session->userdata('id_kec'));?>"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
+                <li><a href="<?php echo site_url('admin_kec/C_laporan/detail_ktp/'.$this->session->userdata('id_kec'));?>"><i class="fa fa-circle-o"></i> KTP</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
-                <li><a href="<?php echo site_url('C_laporan/tampil_jumlahakta');?>"><i class="fa fa-circle-o"></i> AKTA</a></li>
-                <li><a href="<?php echo site_url('C_laporan/tampil_pindahdatang');?>"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+                <li><a href="<?php echo site_url('admin_kec/C_laporan/detail_akta/'.$this->session->userdata('id_kec'));?>"><i class="fa fa-circle-o"></i> AKTA</a></li>
+                <li><a href="<?php echo site_url('admin_kec/C_laporan/detail_pindah/'.$this->session->userdata('id_kec'));?>"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
               </ul>
           </ul>
         </li>

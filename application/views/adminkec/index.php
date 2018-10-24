@@ -4,7 +4,7 @@
 <head>
   <?php $this->load->view('layout/head')?>
 </head>
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
