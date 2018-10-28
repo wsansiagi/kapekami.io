@@ -60,11 +60,11 @@
             </span>
           </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo site_url('C_laporan/tampil_jumlahpendudukkabkot');?>"><i class="fa fa-circle-o"></i> Jumlah Penduduk</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
+                <li><a href="<?php echo site_url('kepalaprov/C_laporan/tampil_semua');?>"><i class="fa fa-circle-o"></i> List Semua Data</a></li>
+                <!-- <li><a href="#"><i class="fa fa-circle-o"></i> KTP</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> KIA</a></li>
                 <li><a href="#"><i class="fa fa-circle-o"></i> AKTA</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li>
+                <li><a href="#"><i class="fa fa-circle-o"></i> Pindah dan Datang</a></li> -->
               </ul>
         </li>
       <?php }?>

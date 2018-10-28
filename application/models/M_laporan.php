@@ -568,5 +568,74 @@ class M_laporan extends CI_Model{
 		$query2 = $this->db->where($where)->get();
 		return $query2->result();
 	}
+
+
+	//model untuk tampilan kepala prov
+
+	function list_semua_data(){
+		$this->db->select_sum('dkbl');
+		$this->db->select_sum('dkbp');
+		$this->db->select_sum('dpl');
+		$this->db->select_sum('dpp');
+		$this->db->select_sum('rbl');
+		$this->db->select_sum('rbp');
+		$this->db->select_sum('rsbl');
+		$this->db->select_sum('rsbp');
+		$this->db->select_sum('cbl');
+		$this->db->select_sum('cbp');
+		$this->db->select_sum('csbl');
+		$this->db->select_sum('csbp');
+		$this->db->select_sum('bio');
+		$this->db->select_sum('sfe');
+		$this->db->select_sum('efc');
+		$this->db->select_sum('dup');
+		$this->db->select_sum('adj');
+		$this->db->select_sum('prr');
+		$this->db->select_sum('cetakktp');
+		$this->db->select_sum('bct');
+		$this->db->select_sum('bctt');
+		$this->db->select_sum('usial');
+		$this->db->select_sum('usiap');
+		$this->db->select_sum('lahirl');
+		$this->db->select_sum('lahirp');
+		$this->db->select_sum('slahirl');
+		$this->db->select_sum('slahirp');
+		$this->db->select_sum('kawin');
+		$this->db->select_sum('akawin');
+		$this->db->select_sum('skawin');
+		$this->db->select_sum('sakawin');
+		$this->db->select_sum('cerai');
+		$this->db->select_sum('acerai');
+		$this->db->select_sum('scerai');
+		$this->db->select_sum('sacerai');
+		$this->db->select_sum('pkb');
+		$this->db->select_sum('pksb');
+		$this->db->select_sum('akb');
+		$this->db->select_sum('aksb');
+		$this->db->select_sum('akbt');
+		$this->db->select_sum('aksbt');
+		$this->db->select_sum('kbsl');
+		$this->db->select_sum('kbsp');
+		$this->db->select_sum('ksbsl');
+		$this->db->select_sum('ksbsp');
+		$this->db->select_sum('kkbsl');
+		$this->db->select_sum('kkbsp');
+		$this->db->select_sum('kksbsl');
+		$this->db->select_sum('kksbsp');
+		$this->db->select('ektp.id_kel');
+		$this->db->select('ektp.id_kec');
+		$this->db->select('ektp.id_kabkot');
+		$this->db->select('kelurahan.nama_kelurahan');
+		$this->db->select('kecamatan.nama_kecamatan');
+		$this->db->select('kabkot.nama_kabkot');
+		$this->db->from('ektp');
+		$this->db->join('kecamatan','kecamatan.id_kec=ektp.id_kec');
+		$this->db->join('kelurahan', 'kelurahan.id_kel = ektp.id_kel');
+		$this->db->join('kabkot', 'kabkot.id_kabkot = ektp.id_kabkot');
+		// $where = array('ektp.id_kabkot' => $id);
+		$this->db->group_by('ektp.id_kabkot');
+		$query2 = $this->db->get();
+		return $query2->result();
+	}
 	
 }

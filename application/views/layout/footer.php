@@ -6,6 +6,8 @@
  </footer> -->
 <!-- jQuery 3 -->
 <script src="<?php echo base_url('asset/bower_components');?>/jquery/dist/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('asset/bower_components');?>/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
@@ -57,6 +59,13 @@
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
+</script>
+<script>
+  $(document).ready(function() {
+      $('#wandoya').DataTable({
+        "scrollX": true
+      });
+  } );
 </script>
 <script>
   $(function () {
