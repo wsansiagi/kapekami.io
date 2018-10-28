@@ -91,7 +91,7 @@ class C_laporan extends CI_Controller {
 		);
 		$this->load->view('laporan/laporan_kelurahan/kelurahan_akta', $data);
 		//print_r($data);
-	}
+	}	
 
 	public function tampil_pindahdatang(){
 		$data['data']=$this->M_laporan->list_data_pindahdatang();
