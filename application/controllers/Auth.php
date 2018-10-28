@@ -1,12 +1,9 @@
 <?php 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
 class Auth extends CI_Controller {
-
     public function index() {
         $this->load->view('auth/index');
     }
-
     public function cek_login() {
         $data = array('username' => $this->input->post('username', TRUE),
                         'password' =>$this->input->post('password', TRUE)
@@ -24,25 +21,33 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata($sess_data);
             }
             if ($this->session->userdata('level')=='adminprovinsi') {
-                $this->load->view('admin/index',$sess_data);
-               
+                $this->load->view('admin/index',$sess_data); 
+            }
+            elseif ($this->session->userdata('level')=='adminkepalaprovinsi') {
+                $this->load->view('kepalaprov/index',$sess_data);
+            }
+            elseif ($this->session->userdata('level')=='adminkabupaten') {
+                $this->load->view('adminkab/index',$sess_data);
+            }
+            elseif ($this->session->userdata('level')=='adminkepalakabupaten') {
+                $this->load->view('kepalakab/index',$sess_data);
             }
             elseif ($this->session->userdata('level')=='adminkecamatan') {
                 $this->load->view('adminkec/index',$sess_data);
+            }
+            elseif ($this->session->userdata('level')=='adminkepalakecamatan') {
+                $this->load->view('kepalakec/index',$sess_data);
             }       
         }
         else {
             echo "<script>alert('Gagal login: Cek username, password!');history.go(-1);</script>";
         }
     }
-
     public function logout(){
         $this->session->sess_destroy();
         
 //        redirect ke halaman login
         redirect(site_url('index.php/Auth'));
     }
-
 }
-
 ?>

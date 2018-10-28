@@ -9,7 +9,7 @@
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
   <!--Sidebar-->
- <?php $this->load->view('layout/sidebar')?>
+  <?php $this->load->view('layout/sidebar3')?>
  
 
  <!-- Content Wrapper. Contains page content -->
@@ -30,39 +30,73 @@
      <div class="container">
   <!-- Page Heading -->
         <div class="row">
-        <div class="pull-left"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Kelurahan </a></div>
-            </h1>
         </div>
         <div class="col-xs-11">
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table  class="tabelbatas table table-bordered table-hover">
+              <table class="tabelReport" border="1px" >
             <thead>
+              <tr rowspan="2">
+                <td rowspan="3">Nama Kelurahan</td>
+                <td colspan="9"><center>Jumlah Penduduk<center></td>
+          
+              </tr>
               <tr>
-                <th>Id Kelurahan</th>
-                <th>Id Kecamatan</th>
-                <th>Nama Kelurahan</th>
-                <th>Aksi</th>
+                <td colspan="3"><center>DKB</center></td>
+                <td colspan="3"><center>Data Pelayanan</center></td>
+              </tr>
+              <tr>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
+                <td colspan="">L</td>
+                <td colspan="">P</td>
+                <td colspan="">Jumlah</td>
               </tr>
             </thead>
             <tbody>
               <?php
-                    foreach ($data as $row ) {
+                    $total1=0;
+                    $total2=0;
+                    $total3=0;
+                    $total4=0;
+                    $total5=0;
+                    $total6=0;
+                    foreach ($data as $row =>$value ) {
+                      $sum = $value->dkbl + $value->dkbp;
+                      $sum2 = $value->dpl + $value->dpp;
+                      $total1 +=$value->dkbl;
+                      $total2 +=$value->dkbp;
+                      $total3 +=$sum;
+                      $total4 +=$value->dpl;
+                      $total5 +=$value->dpl;
+                      $total6 +=$sum2;
                 ?>
                 <tr>
-                    <td><?php echo $row->id_kel ?></td>
-                    <td><?php echo $row->id_kec ?></td>
-                    <td><?php echo $row->nama_kelurahan ?></td>
-                    <td>
-                    <a href="<?php echo base_url('admin/C_admin/edit_kelurahan/'.$row->id_kel); ?>" class="btn btn-success btn-sm">Edit</a>
-                    <a href="<?php echo base_url('admin/C_admin/hapus_kelurahan/'.$row->id_kel); ?>" class="btn btn-danger btn-sm">Hapus</a>
-                    </td>
+                    <td><?php echo $value->nama_kelurahan ?></td>
+                    <td><?php echo $value->dkbl ?></td>
+                    <td><?php echo $value->dkbp ?></td>
+                    <td><?php echo $sum ?></td>
+                    <td><?php echo $value->dpl ?></td>
+                    <td><?php echo $value->dpp ?></td>
+                    <td><?php echo $sum2 ?></td>
                 </tr>
                 <?php
                     }
                 ?>
             </tbody>
+            <tfoot>
+                    <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong><?php echo $total1;?></strong></td>
+                    <td><strong><?php echo $total2;?></strong></td>
+                    <td><strong><?php echo $total3;?></strong></td>
+                    <td><strong><?php echo $total4;?></strong></td>
+                    <td><strong><?php echo $total5;?></strong></td>
+                    <td><strong><?php echo $total6;?></strong></td>
+                    </tr>
+           </tfoot>
           </table>
           </div>
         </div>

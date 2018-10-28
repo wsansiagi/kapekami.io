@@ -12,32 +12,32 @@ class C_laporan extends CI_Controller {
 	}
 	public function tampil_kabkot() {
 		$data['data']=$this->M_kabkot->tampil_kabkot()->result();
-		$this->load->view('laporan_admin_kec/detailprovinsi', $data);
+		$this->load->view('kepalakec/detailprovinsi', $data);
 	}
 	//funtion laporan kecamatan
 	public function tampil_jumlahpendudukkabkot() {
 		$data['data']=$this->M_laporan->laporan_jumlahpenduduk_kabkot();
-		$this->load->view('laporan_admin_kec/detailjumlahpenduduk', $data);
+		$this->load->view('kepalakec/detailjumlahpenduduk', $data);
 		//print_r($data['data']);
 	}
 	//function laporan kelurahan
 	public function tampil_laporan_kelurahan() {
 		$data['data']=$this->M_laporan->list_data_kelurahan();
-		$this->load->view('laporan_admin_kec/detailkelurahan', $data);
+		$this->load->view('kepalakec/detailkelurahan', $data);
 		//print_r($data['data']);
 	}
 	public function tampil_jumlahakta(){
 		$data['data']=$this->M_laporan->list_data_akta();
-		$this->load->view('laporan_admin_kec/detailakta', $data);
+		$this->load->view('kepalakec/detailakta', $data);
 	}
 	public function jumlahpenduduk_kelurahan($id) {
 		$data['data']=$this->M_laporan->list_penduduk_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
 		//print_r($data['data']);
 	}
 	public function tampil_laporan_kelurahan_ktp(){
 		$data['data']=$this->M_laporan->list_data_kelurahan();
-		$this->load->view('laporan_admin_kec/detailkelurahan_ktp', $data);
+		$this->load->view('kepalakec/detailkelurahan_ktp', $data);
 	}
 	public function ktp_penduduk_kelurahan($id){
 		$data = array(
@@ -48,12 +48,12 @@ class C_laporan extends CI_Controller {
 			'pencetakanktpld'=> $this->M_laporan->ktp_penduduk_kelurahan5($id),
 			'suratketeranganpktp'=> $this->M_laporan->ktp_penduduk_kelurahan5($id)
 		);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_ktp', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_ktp', $data);
 	
 	}
 	public function detail_kabkot($id) {
 		$data['data']=$this->M_laporan->laporan_kabkot($id)->result();
-		$this->load->view('laporan_admin_kec/laporankabkot', $data);
+		$this->load->view('kepalakec/laporankabkot', $data);
 	}
 	public function tampil_kecamatan($id) {
 		$data['data']=$this->M_laporan->tampil_provinsi($id)->result();
@@ -77,19 +77,19 @@ class C_laporan extends CI_Controller {
 		);
 		$this->load->view('laporan/laporan_kelurahan/kelurahan_akta', $data);
 		//print_r($data);
-	}	
+	}
 	public function tampil_pindahdatang(){
 		$data['data']=$this->M_laporan->list_data_pindahdatang();
-		$this->load->view('laporan_admin_kec/detailpindah', $data);
+		$this->load->view('kepalakec/detailpindah', $data);
 	}
 	public function pindahdatang_kelurahan($id){
 		$data['data']=$this->M_laporan->list_pidahdatang_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_pindahdatang', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_pindahdatang', $data);
 	}
 	//WANDOYA
 	public function detail_jumlahpenduduk($id){
 		$data['data']=$this->M_laporan->list_penduduk_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
 	}
 	public function detail_ktp($id){
 		$data = array(
@@ -100,7 +100,7 @@ class C_laporan extends CI_Controller {
 			'pencetakanktpld'=> $this->M_laporan->luardomisili_penduduk_kelurahan($id),
 			'suratketeranganpktp'=> $this->M_laporan->sk_ktp_kelurahan($id)
 		);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_ktp', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_ktp', $data);
 	}
 	public function detail_akta($id){
 		$data = array(
@@ -114,15 +114,15 @@ class C_laporan extends CI_Controller {
 			'terbitaktaLahir' => $this->M_laporan->list_akta_kelurahan6($id),
 			'aktacerai' => $this->M_laporan->list_akta_kelurahan7($id)
 		);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_akta', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_akta', $data);
 	}
 	public function detail_pindah($id){
 		$data['data']=$this->M_laporan->list_pidahdatang_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_pindahdatang', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_pindahdatang', $data);
 	}
 	public function detail_KIA($id){
 		$data['data']=$this->M_laporan->list_KIA_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_KIA', $data);
+		$this->load->view('kepalakec/laporan_kelurahan/kelurahan_KIA', $data);
 	}
 	function edit_laporan($id){
 		$where=array('id_ktp'=>$id);
@@ -224,7 +224,7 @@ class C_laporan extends CI_Controller {
 			'id_ktp' => $id_ktp
 		);
 		 $this->M_laporan->update_laporan($where,$data,'ektp');
-		 redirect('admin_kec/C_laporan/detail_ktp/'.$this->session->userdata('id_kec'));
+		 redirect('kepalakec/C_laporan/detail_ktp/'.$this->session->userdata('id_kec'));
 		//print_r($id_kabkot);
 	}
 	

@@ -35,17 +35,16 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" border="1px" >
+              <table class="tabelReport" border="1px" >
             <thead>
               <tr rowspan="2">
                 <td rowspan="3">Nama Kelurahan</td>
                 <td colspan="9"><center>Jumlah Penduduk<center></td>
+                <td rowspan="3">Aksi</td>
               </tr>
               <tr>
                 <td colspan="3"><center>DKB</center></td>
                 <td colspan="3"><center>Data Pelayanan</center></td>
-                <td rowspan="2"><center>Bulan</center></td>
-                <td rowspan="2"><center>Tahun</center></td>
               </tr>
               <tr>
                 <td colspan="">L</td>
@@ -58,9 +57,21 @@
             </thead>
             <tbody>
               <?php
+                    $total1=0;
+                    $total2=0;
+                    $total3=0;
+                    $total4=0;
+                    $total5=0;
+                    $total6=0;
                     foreach ($data as $row =>$value ) {
                       $sum = $value->dkbl + $value->dkbp;
                       $sum2 = $value->dpl + $value->dpp;
+                      $total1 +=$value->dkbl;
+                      $total2 +=$value->dkbp;
+                      $total3 +=$sum;
+                      $total4 +=$value->dpl;
+                      $total5 +=$value->dpl;
+                      $total6 +=$sum2;
                 ?>
                 <tr>
                     <td><?php echo $value->nama_kelurahan ?></td>
@@ -70,14 +81,22 @@
                     <td><?php echo $value->dpl ?></td>
                     <td><?php echo $value->dpp ?></td>
                     <td><?php echo $sum2 ?></td>
-                    <td><?php echo $value->bulan ?></td>
-                    <td><?php echo $value->tahun ?></td>
-
                 </tr>
                 <?php
                     }
                 ?>
             </tbody>
+            <tfoot>
+                    <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong><?php echo $total1;?></strong></td>
+                    <td><strong><?php echo $total2;?></strong></td>
+                    <td><strong><?php echo $total3;?></strong></td>
+                    <td><strong><?php echo $total4;?></strong></td>
+                    <td><strong><?php echo $total5;?></strong></td>
+                    <td><strong><?php echo $total6;?></strong></td>
+                    </tr>
+           </tfoot>
           </table>
           </div>
         </div>

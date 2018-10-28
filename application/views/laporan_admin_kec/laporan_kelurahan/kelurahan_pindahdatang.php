@@ -35,7 +35,7 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" border="1px" >
+              <table class="tabelReport" border="1px" >
             <thead>
               <tr rowspan="2">
                 <td rowspan="3">Nama Kelurahan</td>

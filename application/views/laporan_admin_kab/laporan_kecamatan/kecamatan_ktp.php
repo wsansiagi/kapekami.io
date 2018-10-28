@@ -44,7 +44,7 @@ body {font-family: Arial;}
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
   <!--Sidebar-->
-  <?php $this->load->view('layout/sidebar2')?>
+  <?php $this->load->view('layout/sidebar3')?>
  
 
  <!-- Content Wrapper. Contains page content -->
@@ -157,12 +157,12 @@ body {font-family: Arial;}
                     <thead>
                     <tr rowspan="2">
                         <td rowspan="3">Nama Kelurahan</td>
-                        <td colspan="9"><center>Jumlah Penduduk<center></td>
+                        <td colspan="6"><center>Jumlah Penduduk<center></td>
                         <td rowspan="3">Aksi</td>
                     </tr>
                     <tr>
-                        <td colspan="4"><center>DKB</center></td>
-                        <td colspan="4"><center>Data Pelayanan</center></td>
+                        <td colspan="3"><center>DKB</center></td>
+                        <td colspan="3"><center>Data Pelayanan</center></td>
                     </tr>
                     <tr>
                         <td colspan="">L</td>

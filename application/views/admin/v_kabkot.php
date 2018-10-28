@@ -19,10 +19,7 @@
       <h1>
         Data Kabupaten/Kota
       </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Kabupaten/Kota</li>
-      </ol>
+      
     </section>
 
     <!-- Main content -->
@@ -39,7 +36,7 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="tabelbatas table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Id Kabupaten/Kota</th>

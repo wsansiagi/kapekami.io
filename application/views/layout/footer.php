@@ -1,4 +1,3 @@
-
 <!-- <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
@@ -61,8 +60,7 @@
 </script>
 <script>
   $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
+    $('.tabelReport').DataTable({
       'paging'      : true,
       'lengthChange': false,
       'searching'   : false,
@@ -157,6 +155,14 @@
       'ordering'    : true,
       'info'        : true,
       'autoWidth'   : false
+    })
+    $('.tabelbatas').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : true,
     })
   })
 </script>

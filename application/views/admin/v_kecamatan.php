@@ -37,7 +37,7 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="tabelbatas table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Id Kecamatan</th>
@@ -56,7 +56,7 @@
                     <td><?php echo $row->nama_kecamatan ?></td>
                     <td>
                     <a href="<?php echo base_url('admin/C_admin/edit_kecamatan/'.$row->id_kec); ?>" class="btn btn-success btn-sm">Edit</a>
-                    <a href="<?php echo base_url('admin/C_admin/hapus_kec/'.$row->id_kec); ?>" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="<?php echo base_url('admin/C_admin/hapus_kecamatan/'.$row->id_kec); ?>" class="btn btn-danger btn-sm">Hapus</a>
                     </td>
                 </tr>
                 <?php

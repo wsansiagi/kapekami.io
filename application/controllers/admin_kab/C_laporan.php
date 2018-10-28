@@ -88,41 +88,42 @@ class C_laporan extends CI_Controller {
 	}
 	//WANDOYA
 	public function detail_jumlahpenduduk($id){
-		$data['data']=$this->M_laporan->list_penduduk_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_jumlahpenduduk', $data);
+		$data['data']=$this->M_laporan->list_penduduk_kecamatan($id);
+		$this->load->view('laporan_admin_kab/laporan_kecamatan/kecamatan_jumlahpenduduk', $data);
+		//print_r($data['data']);
 	}
 	public function detail_ktp($id){
 		$data = array(
-			'wajibktp'=> $this->M_laporan->ktp_penduduk_kelurahan($id),
-			'wajibktpbelumrekam'=> $this->M_laporan->belumrekam_penduduk_kelurahan($id),
-			'perekamanpencetakan'=> $this->M_laporan->rekamcetak_penduduk_kelurahan($id),
-			'ktpstatusrekam'=> $this->M_laporan->statusrekam_penduduk_kelurahan($id),
-			'pencetakanktpld'=> $this->M_laporan->luardomisili_penduduk_kelurahan($id),
-			'suratketeranganpktp'=> $this->M_laporan->sk_ktp_kelurahan($id)
+			'wajibktp'=> $this->M_laporan->ktp_penduduk_kecamatan($id),
+			'wajibktpbelumrekam'=> $this->M_laporan->belumrekam_penduduk_kecamatan($id),
+			'perekamanpencetakan'=> $this->M_laporan->rekamcetak_penduduk_kecamatan($id),
+			'ktpstatusrekam'=> $this->M_laporan->statusrekam_penduduk_kecamatan($id),
+			'pencetakanktpld'=> $this->M_laporan->luardomisili_penduduk_kecamatan($id),
+			'suratketeranganpktp'=> $this->M_laporan->sk_ktp_kecamatan($id)
 		);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_ktp', $data);
+		$this->load->view('laporan_admin_kab/laporan_kecamatan/kecamatan_ktp', $data);
 	}
 	public function detail_akta($id){
 		$data = array(
-			'aktakawin' => $this->M_laporan->list_akta_kelurahan($id),
-			'pelaporankematian' => $this->M_laporan->list_akta_kelurahan2($id),
-			'aktapenduduk018tahun' => $this->M_laporan->list_akta_kelurahan3($id),
-			'aktalahir' => $this->M_laporan->list_akta_kelurahan4($id),
-			'kepemilikanakta018tahun' => $this->M_laporan->list_akta_kelurahan5($id),
-			'aktapenduduk05tahun' => $this->M_laporan->list_akta_kelurahan6($id),
-			'kepemilikanakta05tahun' => $this->M_laporan->list_akta_kelurahan7($id),
-			'terbitaktaLahir' => $this->M_laporan->list_akta_kelurahan6($id),
-			'aktacerai' => $this->M_laporan->list_akta_kelurahan7($id)
+			'aktakawin' => $this->M_laporan->list_akta_kecamatan($id),
+			'pelaporankematian' => $this->M_laporan->list_akta_kecamatan2($id),
+			'aktapenduduk018tahun' => $this->M_laporan->list_akta_kecamatan3($id),
+			'aktalahir' => $this->M_laporan->list_akta_kecamatan4($id),
+			'kepemilikanakta018tahun' => $this->M_laporan->list_akta_kecamatan5($id),
+			'aktapenduduk05tahun' => $this->M_laporan->list_akta_kecamatan6($id),
+			'kepemilikanakta05tahun' => $this->M_laporan->list_akta_kecamatan7($id),
+			'terbitaktaLahir' => $this->M_laporan->list_akta_kecamatan8($id),
+			'aktacerai' => $this->M_laporan->list_akta_kecamatan9($id)
 		);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_akta', $data);
+		$this->load->view('laporan_admin_kab/laporan_kecamatan/kecamatan_akta', $data);
 	}
 	public function detail_pindah($id){
-		$data['data']=$this->M_laporan->list_pidahdatang_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_pindahdatang', $data);
+		$data['data']=$this->M_laporan->list_pidahdatang_kecamatan($id);
+		$this->load->view('laporan_admin_kab/laporan_kecamatan/kecamatan_pindahdatang', $data);
 	}
 	public function detail_KIA($id){
-		$data['data']=$this->M_laporan->list_KIA_kelurahan($id);
-		$this->load->view('laporan_admin_kec/laporan_kelurahan/kelurahan_KIA', $data);
+		$data['data']=$this->M_laporan->list_KIA_kecamatan($id);
+		$this->load->view('laporan_admin_kab/laporan_kecamatan/kecamatan_KIA', $data);
 	}
 	function edit_laporan($id){
 		$where=array('id_ktp'=>$id);
@@ -227,6 +228,8 @@ class C_laporan extends CI_Controller {
 		 redirect('admin_kec/C_laporan/detail_ktp/'.$this->session->userdata('id_kec'));
 		//print_r($id_kabkot);
 	}
+
+	
 	
 }
 ?>

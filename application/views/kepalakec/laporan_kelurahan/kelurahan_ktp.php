@@ -44,7 +44,7 @@ body {font-family: Arial;}
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
   <!--Sidebar-->
-  <?php $this->load->view('layout/sidebar2')?>
+  <?php $this->load->view('layout/sidebar3')?>
  
 
  <!-- Content Wrapper. Contains page content -->
@@ -52,7 +52,7 @@ body {font-family: Arial;}
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Laporan Kabupaten/Kota
+        Laporan Kecamatan
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -64,7 +64,8 @@ body {font-family: Arial;}
     <section class="content">
      <div class="container">
   <!-- Page Heading -->
-        
+        <div class="row">
+        </div>
         </div>
         <div class="col-xs-11">
           <div class="box">
@@ -87,7 +88,7 @@ body {font-family: Arial;}
                     <tr rowspan="2">
                         <td rowspan="3">Nama Kelurahan</td>
                         <td colspan="6"><center>Jumlah Penduduk<center></td>
-                        <td rowspan="3">aksi</td>
+                        
                     </tr>
                     <tr>
                         <td colspan="3"><center>DKB</center></td>
@@ -129,7 +130,7 @@ body {font-family: Arial;}
                             <td><?php echo $value->dpl ?></td>
                             <td><?php echo $value->dpp ?></td>
                             <td><?php echo $sum2 ?></td>
-                            <td><a href="<?php echo base_url('index.php/admin_kec/C_laporan/edit_laporan/'.$value->id_ktp); ?>" class="btn btn-success btn-sm">Input</a></td>
+                        
                         </tr>
                         <?php
                             }
@@ -144,7 +145,7 @@ body {font-family: Arial;}
                     <td><?php echo $total4;?></td>
                     <td><?php echo $total5;?></td>
                     <td><?php echo $total6;?></td>
-                    <td></td>
+                    
                     </tr>
                     </tfoot>
                 </table>
@@ -158,7 +159,6 @@ body {font-family: Arial;}
                     <tr rowspan="2">
                         <td rowspan="3">Nama Kelurahan</td>
                         <td colspan="9"><center>Jumlah Penduduk<center></td>
-                        <td rowspan="3">Aksi</td>
                     </tr>
                     <tr>
                         <td colspan="4"><center>DKB</center></td>
@@ -200,7 +200,7 @@ body {font-family: Arial;}
                             <td><?php echo $value->dpl ?></td>
                             <td><?php echo $value->dpp ?></td>
                             <td><?php echo $sum2 ?></td>
-                            <td><a href="<?php echo base_url('index.php/admin_kec/C_laporan/edit_laporan/'.$value->id_ktp); ?>" class="btn btn-success btn-sm">Edit</a></td>
+                            
                         </tr>
                         <?php
                             }
@@ -215,7 +215,6 @@ body {font-family: Arial;}
                     <td><?php echo $total4;?></td>
                     <td><?php echo $total5;?></td>
                     <td><?php echo $total6;?></td>
-                    <td></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -288,7 +287,7 @@ body {font-family: Arial;}
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     </tr>

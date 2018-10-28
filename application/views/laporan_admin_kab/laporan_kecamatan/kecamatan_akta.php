@@ -44,7 +44,7 @@ body {font-family: Arial;}
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
   <!--Sidebar-->
-  <?php $this->load->view('layout/sidebar2')?>
+  <?php $this->load->view('layout/sidebar3')?>
  
 
  <!-- Content Wrapper. Contains page content -->

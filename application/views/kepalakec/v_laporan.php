@@ -9,7 +9,7 @@
   <!--Main Header-->
  <?php $this->load->view('layout/header')?>
   <!--Sidebar-->
- <?php $this->load->view('layout/sidebar')?>
+ <?php $this->load->view('layout/sidebar2')?>
  
 
  <!-- Content Wrapper. Contains page content -->
@@ -30,16 +30,14 @@
      <div class="container">
   <!-- Page Heading -->
         <div class="row">
-        <div class="pull-left"><a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#ModalaAdd"><span class="fa fa-plus"></span> Tambah Laporan </a></div>
-            </h1>
-        </div>
-        <div class="col-xs-12">
+        <div class="col-xs-11">
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
-              <table class=" tabelbatas table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-hover">
             <thead>
               <tr>
+                <th>Id Laporan</th>
                 <th>Id Kabupaten</th>
                 <th>Id Kecamatan</th>
                 <th>dkbl</th>
@@ -57,6 +55,8 @@
                     foreach ($data as $row ) {
                 ?>
                 <tr>
+
+                    <td><?php echo $row->id_ktp ?></td>
                     <td><?php echo $row->id_kabkot ?></td>
                     <td><?php echo $row->id_kec ?></td>
                     <td><?php echo $row->dkbl ?></td>
@@ -68,7 +68,6 @@
                     <td><?php echo $row->status ?></td>
                     <td>
                     <a href="<?php echo base_url('index.php/admin/C_admin/edit_laporan/'.$row->id_ktp); ?>" class="btn btn-success btn-sm">Edit</a>
-                    <a href="<?php echo base_url('index.php/admin/C_admin/hapus_laporan/'.$row->id_ktp); ?>" class="btn btn-danger btn-sm">Hapus</a>
                     </td>
                 </tr>
                 <?php
@@ -92,62 +91,51 @@
                 <div class="modal-body">
 
                     <div class="form-group">
+                        <label class="control-label col-xs-3" >ID Laporan</label>
+                        <div class="col-xs-9">
+                            <input name="id_ktp" class="form-control" type="text" placeholder="Id Laporan" style="width:335px;" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label col-xs-3" >ID Kabupaten/Kota</label>
                         <div class="col-xs-9">
-                            <select name="id_kabkot" class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" required>
-                            <option value="">Pilih Kabupaten/Kota</option>
-                              <?php
-                                foreach ($kabupaten as $rows) {
-                              ?>
-                                <option value="<?php echo $rows->id_kabkot ?>"><?php echo $rows->nama_kabkot ?></option>
-                              <?php
-                                }
-                              ?>
-                            </select>
+                            <input name="id_kabkot" id="id_kabkot" class="form-control" type="text" placeholder="Id Kabupaten/Kota" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >ID Kecamatan</label>
                         <div class="col-xs-9">
-                            <select name="id_kec" class="form-control" type="text" placeholder="Id Kecamatan" style="width:335px;" required>
-                            <option value="">Pilih Kecamatan</option>
-                              <?php
-                                foreach ($kecamatan as $rows) {
-                              ?>
-                                <option value="<?php echo $rows->id_kec ?>"><?php echo $rows->nama_kecamatan ?></option>
-                              <?php
-                                }
-                              ?>
-                            </select>
+                            <input name="id_kec" class="form-control" type="text" placeholder="Id Laporan" style="width:335px;" required>
                         </div>
                     </div>
 
                      <div class="form-group">
                         <label class="control-label col-xs-3" >dkbl</label>
                         <div class="col-xs-9">
-                            <input name="dkbl" class="form-control" type="text" placeholder="dkbl" style="width:335px;" >
+                            <input name="dkbl" class="form-control" type="text" placeholder="dkbl" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >dkbp</label>
                         <div class="col-xs-9">
-                            <input name="dkbp" class="form-control" type="text" placeholder="dkbp" style="width:335px;" >
+                            <input name="dkbp" class="form-control" type="text" placeholder="dkbp" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >dpl</label>
                         <div class="col-xs-9">
-                            <input name="dpl" class="form-control" type="text" placeholder="dpl" style="width:335px;" >
+                            <input name="dpl" class="form-control" type="text" placeholder="dpl" style="width:335px;" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-xs-3" >dpp</label>
                         <div class="col-xs-9">
-                            <input name="dpp" class="form-control" type="text" placeholder="dpp" style="width:335px;" >
+                            <input name="dpp" class="form-control" type="text" placeholder="dpp" style="width:335px;" required>
                         </div>
                     </div>
 
